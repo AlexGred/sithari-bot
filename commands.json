@@ -1,0 +1,18 @@
+{
+  "help": {
+    "command": "help",
+    "description": "выводит список комманд"
+  },
+  "power": {
+    "command": "абсолютнаявласть",
+    "value": "./images/power.jpg",
+    "description": "АБСОЛЮТНАЯВЛАААСТЬ!"
+  },
+  "user": {
+    "command": "user",
+    "description": "user",
+    "permission": {
+      
+    }
+  }
+}
