@@ -6,13 +6,7 @@
   "power": {
     "command": "абсолютнаявласть",
     "value": "./images/power.jpg",
-    "description": "АБСОЛЮТНАЯВЛАААСТЬ!"
-  },
-  "user": {
-    "command": "user",
-    "description": "user",
-    "permission": {
-      
-    }
+    "description": "АБСОЛЮТНАЯВЛАААСТЬ!",
+    "error": "Только владыка может использовать силу!"
   }
 }

@@ -1,7 +1,13 @@
 {
-  "token": "MzU2ODgwMjAzMDg1MjUwNTcx.DJhyZQ.G-3Z6ESTcC0FVzGmpvxb7cTUf0k",
+  "token": "MzU3NTEzOTM3ODUzNjEyMDMy.DJrAUg.b-XplXXu1jvFR-Wsixqopho004o",
   "prefix": "!",
-  "pemission": {
-    "admin": "admin"
-  }
+  "superuser": [
+    "Alex_Gred"
+  ],
+  "specialuser": [
+    "Alex_Gred"
+  ],
+  "roles": [
+    "admin"
+  ]
 }
