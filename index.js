@@ -33,6 +33,20 @@ bot.on('message', message => {
       message.reply(commands.power.error);
     }
   }
+
+  if (message.content === config.prefix + commands.user.command) {
+
+    //message.channel.send(message.member.roles.keyArray());
+
+    let roleId = message.guild.roles.find('name', 'admin');
+    
+    //console.log(message.guild.roles);
+    console.log(roleId.id);
+
+    if (message.member.roles.has(roleId.id)) {
+      message.channel.send('true');
+    }
+  }
 });
 
 bot.on('guildMemberAdd', member => {
