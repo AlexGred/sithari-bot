@@ -37,6 +37,14 @@ bot.on('message', message => {
   if (message.content === config.prefix + commands.rules.command) {
     message.channel.send(commands.rules.value);
   }
+
+  if (message.content === config.prefix + commands.rankor.command) {
+    message.channel.send(commands.rankor.value);
+  }
+
+  if (message.content === config.prefix + commands.tank.command) {
+    message.channel.send(commands.tank.value);
+  }
 });
 
 bot.on('guildMemberAdd', member => {

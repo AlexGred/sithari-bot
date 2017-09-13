@@ -13,5 +13,15 @@
     "command": "rules",
     "description": "правила группы",
     "value": "Правила"
+  },
+  "rankor": {
+    "command": "rankor",
+    "description": "правил героического ранкора",
+    "value": "pew pew pew"
+  },
+  "tank": {
+    "command": "tank",
+    "description": "правила героического танка",
+    "value": "кеноби, кх-кх-кхрр"
   }
 }
