@@ -5,8 +5,13 @@
   },
   "power": {
     "command": "абсолютнаявласть",
-    "value": "./images/power.jpg",
     "description": "АБСОЛЮТНАЯВЛАААСТЬ!",
+    "value": "./images/power.jpg",
     "error": "Только владыка может использовать силу!"
+  },
+  "rules": {
+    "command": "rules",
+    "description": "правила группы",
+    "value": "Правила"
   }
 }

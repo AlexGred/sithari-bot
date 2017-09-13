@@ -1,6 +1,9 @@
 {
   "token": "MzU3NTEzOTM3ODUzNjEyMDMy.DJrAUg.b-XplXXu1jvFR-Wsixqopho004o",
   "prefix": "!",
+  "channels": [
+    "general"
+  ],
   "superuser": [
     "Alex_Gred"
   ],
