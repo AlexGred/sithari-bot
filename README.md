@@ -1,13 +1,45 @@
 # sithari-bot
 Bot for sithari giuld
 
-Commands
+## Settings
 
+### Config
+Config | Description
+------ | ----
+token | Your token
+prefix | Your prefix
+channels | List of channels
+superuser | Bot admin nickname
+specialuser | Nickname user who have special permission
+roles | Roles of user for moderation bot
+
+### Commands
+
+#### Example
 {
- <system_name_of_command>: {
-   "command": <command_name>,     
-   "description": <command_description>,
-   "value": <command_value_text_url_etc>,
-   "error": <text_for_error_or_permissin_denied>
- }   
-} 
+  "help": {
+    "command": "help",
+    "description": "выводит список комманд"
+  },
+  "power": {
+    "command": "абсолютнаявласть",
+    "description": "АБСОЛЮТНАЯВЛАААСТЬ!",
+    "value": "./images/power.jpg",
+    "error": "Только владыка может использовать силу!"
+  },
+  "rules": {
+    "command": "rules",
+    "description": "правила группы",
+    "value": "Правила"
+  },
+  "rankor": {
+    "command": "rankor",
+    "description": "правил героического ранкора",
+    "value": "pew pew pew"
+  },
+  "tank": {
+    "command": "tank",
+    "description": "правила героического танка",
+    "value": "кеноби, кх-кх-кхрр"
+  }
+}
