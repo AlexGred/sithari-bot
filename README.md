@@ -16,6 +16,7 @@ roles | Roles of user for moderation bot
 ### Commands
 
 #### Example
+```json
 {
   "help": {
     "command": "help",
@@ -43,3 +44,4 @@ roles | Roles of user for moderation bot
     "value": "кеноби, кх-кх-кхрр"
   }
 }
+```
