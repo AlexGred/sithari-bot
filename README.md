@@ -1,4 +1,4 @@
-# sithari-bot
+# Senes-bot
 Bot for sithari giuld
 
 ## Settings
