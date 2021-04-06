@@ -1,0 +1,47 @@
+{
+  "extends": "eslint:recommended",
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2019
+  },
+  "rules": {
+    "no-debugger": "off",
+    "no-console": "warn",
+    "no-unused-vars": "warn",
+    "no-use-before-define": "error",
+    "quotes": ["warn", "single"],
+    "indent": ["warn", 2],
+    "semi": ["warn", "always"],
+    "semi-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "no-dupe-else-if": "warn",
+    "brace-style": "warn",
+    "block-spacing": ["warn", "always"],
+    "no-trailing-spaces": "warn",
+    "no-undef": "error",
+    "camelcase": [
+      "warn", 
+      {
+      "properties": "always"
+      }
+    ],
+    "function-call-argument-newline": ["error", "never"],
+    "comma-spacing": [
+      "warn", 
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "capitalized-comments": "warn"
+  }
+}

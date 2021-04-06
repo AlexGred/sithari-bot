@@ -1,0 +1,21 @@
+{
+  "search.useIgnoreFiles": true,
+  "easycompile.sass": {
+    "out": false,
+    "sourceMap": false
+  },
+  "easycompile.less": {
+    "out": false,
+    "sourceMap": false
+  },
+  "easycompile.typescript": {
+    "outdir": false,
+    "outfile": false,
+    "sourceMap": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "eslint.validate": ["javascript"],
+  "tslint.jsEnable": false
+}

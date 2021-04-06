@@ -27,9 +27,8 @@ bot.on('message', message => {
         {
           file: commands.power.value
         }
-      );      
-    }
-    else {
+      );
+    } else {
       message.reply(commands.power.error);
     }
   }
