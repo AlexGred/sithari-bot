@@ -1,56 +1,45 @@
+const fs = require('fs');
 const Discord = require('discord.js');
-const bot = new Discord.Client();
+const client = new Discord.Client();
 
-const config =  require('./config.json');
-const commands = require('./commands.json');
+const config = require('./src/config.json');
 
-bot.on('ready', () => {
+client.once('ready', () => {
   console.log('Ready!');
 });
 
-bot.on('message', message => {
+client.commands = new Discord.Collection();
 
-  if (message.content === config.prefix + commands.help.command) {
-    let result= 'Список команд бота: \n \n';
+const commandFolders = fs.readdirSync('./src/commands');
 
-    for (var key in commands) {
-      result += config.prefix + commands[key].command + ' - ' + commands[key].description + '\n';
-    }
+for (const folder of commandFolders) {
+  const commandFiles = fs.readdirSync(`./src/commands/${folder}`).filter(file => file.endsWith('.js'));
+  for (const file of commandFiles) {
+    const command = require(`./src/commands/${folder}/${file}`);
+    client.commands.set(command.name, command);
+  }
+}
 
-    message.channel.send(result);
+client.on('message', message => {
+  if (!message.content.startsWith(config.prefix) || message.author.bot) {
+    return;
   }
 
-  if (message.content === config.prefix + commands.power.command) {
+  console.log(message.content);
 
-    if (config.specialuser.includes(message.author.username)) {
-      message.channel.send(
-        {
-          file: commands.power.value
-        }
-      );
-    } else {
-      message.reply(commands.power.error);
-    }
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/);
+  const command = args.shift().toLowerCase();
+
+  if (!client.commands.has(command)) {
+    return;
   }
 
-  if (message.content === config.prefix + commands.rules.command) {
-    message.channel.send(commands.rules.value);
-  }
-
-  if (message.content === config.prefix + commands.rankor.command) {
-    message.channel.send(commands.rankor.value);
-  }
-
-  if (message.content === config.prefix + commands.tank.command) {
-    message.channel.send(commands.tank.value);
+  try {
+    client.commands.get(command).execute(message, args);
+  } catch (error) {
+    console.error(error);
+    message.reply('there was an error trying to execute that command!');
   }
 });
 
-bot.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find('name', config.channels[0]);
-
-  if (!channel) return;
-  channel.send(`Привет ${member}! Я бот. Введи !help, чтобы узнать комманды.`);
-});
-
-bot.login(config.token);
+client.login(config.token);
