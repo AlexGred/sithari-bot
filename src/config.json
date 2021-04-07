@@ -2,7 +2,8 @@
   "token": "MzU3NTEzOTM3ODUzNjEyMDMy.DJrAUg.b-XplXXu1jvFR-Wsixqopho004o",
   "prefix": "!",
   "channels": [
-    "general"
+    "general",
+    "bot-test"
   ],
   "superuser": [
     "Alex_Gred"

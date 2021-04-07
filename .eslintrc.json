@@ -16,8 +16,7 @@
     "indent": ["warn", 2],
     "semi": ["warn", "always"],
     "semi-spacing": [
-      "error",
-      {
+      "error", {
         "before": false,
         "after": true
       }
@@ -28,19 +27,30 @@
     "no-trailing-spaces": "warn",
     "no-undef": "error",
     "camelcase": [
-      "warn", 
-      {
-      "properties": "always"
+      "warn",  {
+        "properties": "always"
       }
     ],
     "function-call-argument-newline": ["error", "never"],
     "comma-spacing": [
-      "warn", 
-      {
+      "warn", {
         "before": false,
         "after": true
       }
     ],
-    "capitalized-comments": "warn"
+    "capitalized-comments": "warn",
+    "key-spacing": [
+      "warn", {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+    "object-curly-newline": [
+      "warn", {
+        "minProperties": 2
+      }
+    ],
+    "curly": 1,
+    "object-curly-spacing": ["warn", "always"]
   }
 }
