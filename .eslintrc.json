@@ -38,7 +38,6 @@
         "after": true
       }
     ],
-    "capitalized-comments": "warn",
     "key-spacing": [
       "warn", {
         "beforeColon": false,
