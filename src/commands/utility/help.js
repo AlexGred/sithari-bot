@@ -10,17 +10,17 @@ module.exports = {
     const data = [];
     const { commands } = message.client;
 
-    let commandsList = commands.map(command => `${prefix} ${command.name} - ${command.description}`).join('\n');
+    let commandsList = commands.map(command => `${prefix}${command.name} - ${command.description}`).join('\n');
 
     if (!args.length) {
-      data.push(`Here's a list of all my commands:${commandsList}`);
+      data.push(`Here's a list of all my commands:\n${commandsList}`);
       data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`);
 
       return message.channel.send(data, { split: true });
     }
 
     const name = args[0].toLowerCase();
-    const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
+    const command = commands.get(name) || commands.find(cmd => cmd.aliases && cmd.aliases.includes(name));
 
     if (!command) {
       return message.reply('that\'s not a valid command!');

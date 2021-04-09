@@ -1,14 +1,14 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const client = new Discord.Client();
-
 const config = require('./src/config.json');
+
+const client = new Discord.Client();
+client.commands = new Discord.Collection();
 
 client.once('ready', () => {
   console.log('Ready!');
 });
 
-client.commands = new Discord.Collection();
 
 const commandFolders = fs.readdirSync('./src/commands');
 
@@ -28,14 +28,26 @@ client.on('message', message => {
   console.log(message.content);
 
   const args = message.content.slice(config.prefix.length).trim().split(/ +/);
-  const command = args.shift().toLowerCase();
+  const commandName = args.shift().toLowerCase();
 
-  if (!client.commands.has(command)) {
-    return;
+  const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+
+  if (!command) {
+    return message.reply('Don\'t have that command');
+  }
+
+  if (command.guildOnly && message.channel.type === 'dm') {
+    return message.reply('I can\'t execute that command inside DMs!');
+  }
+
+  if (command.args && !args.length) {
+    let reply = `You didn't provide any arguments, ${message.author}!`;
+
+    return message.channel.send(reply);
   }
 
   try {
-    client.commands.get(command).execute(message, args);
+    command.execute(message, args);
   } catch (error) {
     console.error(error);
     message.reply('there was an error trying to execute that command!');
