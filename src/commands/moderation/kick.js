@@ -8,6 +8,7 @@ module.exports = {
 
     if (user) {
       const member = message.guild.member(user);
+
       if (member) {
         member.kick('Optional reason that will display in the audit logs')
           .then(() => {
