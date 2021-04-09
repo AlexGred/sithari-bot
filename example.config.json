@@ -1,17 +1,17 @@
 {
-  "token": "MzU3NTEzOTM3ODUzNjEyMDMy.WbkuzQ.9mFN2v1I5P10li_r9lXDERi448I",
+  "token": "token_of_bot",
   "prefix": "!",
   "channels": [
     "general",
     "bot-test"
   ],
   "superuser": [
-    "Alex_Gred"
+    "Nickname"
   ],
   "specialuser": [
-    "Alex_Gred"
+    "Nickname"
   ],
   "roles": [
-    "admin"
+    "role"
   ]
 }
