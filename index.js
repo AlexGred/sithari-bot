@@ -41,6 +41,13 @@ client.on('message', message => {
     return message.reply('I can\'t execute that command inside DMs!');
   }
 
+  if (command.permissions) {
+    const authorPerms = message.channel.permissionsFor(message.author);
+    if (!authorPerms || !authorPerms.has(command.permissions)) {
+      return message.reply('You can\'t do this!');
+    }
+  }
+
   if (command.args && !args.length) {
     let reply = `You didn't provide any arguments, ${message.author}!`;
 
